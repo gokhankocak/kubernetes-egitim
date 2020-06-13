@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: host-ingress
+spec:
+    rules:
+    - host: alpaca.example.com
+      http:
+        paths:
+        - backend:
+            serviceName: alpaca
+            servicePort: 8080
