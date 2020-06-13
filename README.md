@@ -1,6 +1,6 @@
 # Kubernetes Eğitimi
 
-Kubernetes Eğitimi için hazırladığım belgeleri buradan indiriebilirsiniz. Eğitimde yapılan alıştırmaları da burada bulabilirsiniz.
+Kubernetes Eğitimi için hazırladığım belgeleri buradan indirebilirsiniz. Eğitimde yapılan alıştırmaları da burada bulabilirsiniz.
 ## Ortam Kurulumu
 
 Alıştırmaları yapabilmek için öncelikle bir ortam kurmamız gerekiyor. Multipass kullanarak Ubuntu sanal sistemler yaratacağız. Bu sanal sistemleri bir Kubernetes cluster kurmak için kullanacağız.
@@ -148,3 +148,18 @@ master          Ready    <none>   69m   v1.18.3-34+0c5dcc01175871
 
 Bu aşamada Kubernetes Cluster kurulumunu tamamlamış olduk.
 
+### Github'daki Alıştırma ve Scriptlerin İndirilmesi
+
+Önce host sistemden "master" sisteme giriyoruz:
+
+```shell
+multipass shell master # "master" adlı sistemde bir shell açar
+```
+
+"master" sistemde aşağıdaki komutu giriyoruz:
+
+```shell
+git clone https://github.com/gokhankocak/kubernetes-egitim.git
+```
+
+"master" adlı sisteme **"kubernetes-egitim"** adlı dizine eğitimde kullancağımız scriptler ve konfigürasyon metinleri indirilmiş oldu.
