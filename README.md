@@ -140,7 +140,7 @@ master          Ready    <none>   69m   v1.18.3-34+0c5dcc01175871
 
 Bu aşamada Kubernetes Cluster kurulumunu tamamlamış olduk.
 
-### Github'daki Alıştırma ve Scriptlerin İndirilmesi
+### Github'daki Alıştırma ve Betiklerin İndirilmesi
 
 Önce host sistemden "master" sisteme giriyoruz:
 
