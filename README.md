@@ -103,9 +103,9 @@ multipass shell master # "master" adlı sistemde bir shell açar
 sudo microk8s kubectl get nodes # Kubernets node'larını listeler
 ```
 
-NAME            STATUS   ROLES    AGE   VERSION
-192.168.64.10   Ready    <none>   58m   v1.18.3-34+0c5dcc01175871
-master          Ready    <none>   69m   v1.18.3-34+0c5dcc01175871
+NAME            STATUS   ROLES    AGE   VERSION  
+192.168.64.10   Ready    <none>   58m   v1.18.3-34+0c5dcc01175871  
+master          Ready    <none>   69m   v1.18.3-34+0c5dcc01175871  
 
 "node2" adlı sistemi Kubernetes Cluster'a katmak için "master" sistemde aşağıdaki komutu giriyoruz:
 
@@ -141,9 +141,10 @@ multipass shell master # "master" adlı sistemde bir shell açar
 sudo microk8s kubectl get nodes # Kubernets node'larını listeler
 ```
 
-NAME            STATUS   ROLES    AGE   VERSION
-192.168.64.10   Ready    <none>   58m   v1.18.3-34+0c5dcc01175871
-192.168.64.9    Ready    <none>   57m   v1.18.3-34+0c5dcc01175871
-master          Ready    <none>   69m   v1.18.3-34+0c5dcc01175871
+NAME            STATUS   ROLES    AGE   VERSION  
+192.168.64.10   Ready    <none>   58m   v1.18.3-34+0c5dcc01175871  
+192.168.64.9    Ready    <none>   57m   v1.18.3-34+0c5dcc01175871  
+master          Ready    <none>   69m   v1.18.3-34+0c5dcc01175871  
 
 Bu aşamada Kubernetes Cluster kurulumunu tamamlamış olduk.
+
