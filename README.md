@@ -68,11 +68,7 @@ multipass shell master # "master" adlı sistemde bir shell açar
 sudo microk8s add-node
 ```
 
-Join node with: microk8s join 192.168.64.11:25000/9c2fae7982089703e4c82adfd87d471e
-
-If the node you are adding is not reachable through the default interface you can use one of the following:
- microk8s join 192.168.64.11:25000/9c2fae7982089703e4c82adfd87d471e
- microk8s join 10.1.43.0:25000/9c2fae7982089703e4c82adfd87d471e
+Join node with: *microk8s join 192.168.64.11:25000/9c2fae7982089703e4c82adfd87d471e*
 
 microk8s join ile başlayan komutu kopyalıyoruz. Daha sonra "node1" adlı sisteme girmek için host sisteme geri dönüyoruz.
 
@@ -112,11 +108,7 @@ master          Ready    <none>   69m   v1.18.3-34+0c5dcc01175871
 ```shell
 sudo microk8s add-node
 ```
-Join node with: microk8s join 192.168.64.11:25000/479c49727026664c1b3b278068f2e6c4
-
-If the node you are adding is not reachable through the default interface you can use one of the following:
- microk8s join 192.168.64.11:25000/479c49727026664c1b3b278068f2e6c4
- microk8s join 10.1.43.0:25000/479c49727026664c1b3b278068f2e6c4
+Join node with: *microk8s join 192.168.64.11:25000/479c49727026664c1b3b278068f2e6c4*
 
 Bu sefer farklı bir token üretilecek, microk8s join ile başlayan satırı kopyalıyoruz.
 
