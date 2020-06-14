@@ -9,6 +9,8 @@ spec:
         - name: kuard
           image: gcr.io/kuar-demo/kuard-amd64:blue
           imagePullPolicy: Always
+          command:
+          - oneshot
           args:
           - "--keygen-enable"
           - "--keygen-exit-on-complete"
