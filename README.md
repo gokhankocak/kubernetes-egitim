@@ -13,9 +13,9 @@ Multipass aracını şu adresten indiribilirsiniz:
 Multipass kurulumunu yaptıktan sonra 3 adet sanal sistem yaratacağız. Bu sanal sistemler Kubernetes cluster'ı oluşturan sistemler olacak.
 
 ```shell
-multipass launch -m 1G -d 16G -n master # 1 GB bellek ve 16 GB disk alanına sahip "master" aslı sanal makine oluşturulması
-multipass launch -m 1G -d 16G -n node1 # 1 GB bellek ve 16 GB disk alanına sahip "node1" aslı sanal makine oluşturulması
-multipass launch -m 1G -d 16G -n node2 # 1 GB bellek ve 16 GB disk alanına sahip "node2" aslı sanal makine oluşturulması
+multipass launch -m 2G -d 16G -n master # 1 GB bellek ve 16 GB disk alanına sahip "master" aslı sanal makine oluşturulması
+multipass launch -m 2G -d 16G -n node1 # 1 GB bellek ve 16 GB disk alanına sahip "node1" aslı sanal makine oluşturulması
+multipass launch -m 2G -d 16G -n node2 # 1 GB bellek ve 16 GB disk alanına sahip "node2" aslı sanal makine oluşturulması
 ```
 
 Sanal sistemlere login olmak için:
