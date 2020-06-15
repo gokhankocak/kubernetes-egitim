@@ -99,32 +99,12 @@ multipass exec master sudo microk8s kubectl get nodes
 |192.168.64.9  |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
 |master        |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
 
-
-### Github'daki Alıştırma ve Betiklerin "master" Sanal Sisteme İndirilmesi
-
-Önce host sistemden "master" sisteme giriyoruz:
-
-```shell
-multipass shell master # "master" adlı sistemde bir shell açar
-```
-
-"master" sistemde aşağıdaki komutu giriyoruz:
-
-```shell
-git clone https://github.com/gokhankocak/kubernetes-egitim.git
-cd kubernetes-egitim
-cd betik
-chmod +x *.sh
-```
-
-"master" adlı sisteme **"kubernetes-egitim"** adlı dizine eğitimde kullanacağımız betikler ve konfigürasyon metinleri indirilmiş oldu.
-
 ### Kubernetes Dashboard Çalıştırılması
 
 Önce host sistemden "master" sisteme giriyoruz:
 
 ```shell
-multipass shell master # "master" adlı sistemde bir shell açar
+multipass exec master # "master" adlı sistemde bir shell açar
 ```
 
 "master" sistemde aşağıdaki komutu giriyoruz:
