@@ -21,26 +21,7 @@ Multipass aracını şu adresten indiribilirsiniz:
 
 Multipass kurulumunu yaptıktan sonra 3 adet sanal sistem yaratacağız.
 
-Bu sanal sistemler Kubernetes cluster'ı oluşturan sistemler olacak.
-
-```shell
-multipass launch -m 2G -d 16G -n master # 1 GB bellek ve 16 GB disk alanına sahip "master" aslı sanal makine oluşturulması
-multipass launch -m 2G -d 16G -n node1 # 1 GB bellek ve 16 GB disk alanına sahip "node1" aslı sanal makine oluşturulması
-multipass launch -m 2G -d 16G -n node2 # 1 GB bellek ve 16 GB disk alanına sahip "node2" aslı sanal makine oluşturulması
-```
-
-Sanal sistemlere login olmak için:
-
-```shell
-multipass shell master # "master" adlı sistemde bir shell açar
-```
-
-Multipass ile sanal sistemleri oluşturduktan sonra Kubernetes cluster kurmak için MicroK8s adlı aracı kullanacağız.
-
-### MicroK8s Kurulumu
-
-MicroK8s aracı ile ilgili bilgilere şu adresten erişebilirsiniz:
-[MicroK8s](https://microk8s.io/)
+### Kubernetes Cluster Oluşturma
 
 Öncelikle yardımcı betikleri indirmek için aşağıdaki komutu çalıştırıyoruz:
 
@@ -49,34 +30,23 @@ git clone https://github.com/gokhankocak/kubernetes-egitim.git
 cd kubernetes-egitim
 ```
 
-"Kube.sh" adlı betiği sanal sistemlere kopyalayıp çalıştırıyoruz.
+Kube.sh adlı betik "master", "node1" ve "node2" adlı 3 tane sanal sistem yaratacak.
+Bu sistemlere gerekli yazılımları yükleyecek.
 
-Bu betik gerekli programları sanal sistemlere kuracak ve Kubernetes Cluster kurulumunu yapacaktır.
-
-```shell
-multipass transfer betik/Kube.sh master:/tmp
-multipass exec master /bin/bash /tmp/Kube.sh
-```
-
-Bu işlemleri "node1" ve "node2" adlı sanal sistemlerde de yapıyoruz.
+**kubernetes-egitim** dizininde olduğunuzu varsayarak:
 
 ```shell
-multipass transfer betik/Kube.sh node1:/tmp
-multipass exec node1 /bin/bash /tmp/Kube.sh
+cd betik
+./Kube.sh
 ```
+
+YeniNode.sh adlı betik ise Kubernetes Cluster'a yeni bir node eklemeye yardımcı olacak.
 
 ```shell
-multipass transfer betik/Kube.sh node2:/tmp
-multipass exec node2 /bin/bash /tmp/Kube.sh
+./YeniNode.sh
 ```
 
-### Kubernetes Cluster Oluşturma
-
-Bu adımda Kubernetes Cluster oluşturacağız. Önce "master" adlı sanal sisteme aşağıdaki komutu gönderiyoruz:
-
-```shell
-multipass exec master sudo microk8s add-node # "master" adlı sistemi yeni bir node eklemek için hazırlar
-```
+Aşağıdakine benzer bir çıktı göreceksiniz. IP adresleri ve token sizde farklı olacak.
 
 Join node with: *microk8s join 192.168.64.11:25000/9c2fae7982089703e4c82adfd87d471e*
 
@@ -92,25 +62,13 @@ multipass exec node1 sudo microk8s join 192.168.64.11:25000/9c2fae7982089703e4c8
 
 "node1" sisteminin Kubernetes cluster'a katılmasını bekliyoruz.
 
-"master" sisteminde aşağıdaki komutu kullanarak Kubernetes cluster'daki durumu görebiliriz:
-
-"master" sisteme aşağıdaki komutu gönderiyoruz:
-
+"node2" sistemini Kubernetes Cluster'a katmak için yine YeniNode.sh adlı betiği çalıştırıyoruz.
 ```shell
-multipass exec master sudo microk8s kubectl get nodes # Kubernets node'larını listeler
+./YeniNode.sh
 ```
 
-NAME            STATUS   ROLES    AGE   VERSION  
+Aşağıdakine benzer bir çıktı göreceksiniz. IP adresleri ve token sizde farklı olacak.
 
-192.168.64.10   Ready    <none>   58m   v1.18.3-34+0c5dcc01175871  
-
-master          Ready    <none>   69m   v1.18.3-34+0c5dcc01175871  
-
-"node2" adlı sistemi Kubernetes Cluster'a katmak için "master" sisteme aşağıdaki komutu gönderiyoruz:
-
-```shell
-multipass exec master sudo microk8s add-node
-```
 Join node with: *microk8s join 192.168.64.11:25000/479c49727026664c1b3b278068f2e6c4*
 
 Bu sefer farklı bir token üretilecek, microk8s join ile başlayan satırı kopyalıyoruz.
@@ -123,23 +81,9 @@ multipass exec node2 sudo microk8s join 192.168.64.11:25000/479c49727026664c1b3b
 
 "node2" sisteminin Kubernetes cluster'a katılmasını bekliyoruz.
 
-"master" sisteminde aşağıdaki komutu kullanarak Kubernetes cluster'daki durumu görebiliriz:
-
-```shell
-multipass exec master sudo microk8s kubectl get nodes # Kubernets node'larını listeler
-```
-
-NAME            STATUS   ROLES    AGE   VERSION  
-
-192.168.64.10   Ready    <none>   58m   v1.18.3-34+0c5dcc01175871  
-
-192.168.64.9    Ready    <none>   57m   v1.18.3-34+0c5dcc01175871  
-
-master          Ready    <none>   69m   v1.18.3-34+0c5dcc01175871  
-
 Bu aşamada Kubernetes Cluster kurulumunu tamamlamış olduk.
 
-### Github'daki Alıştırma ve Betiklerin İndirilmesi
+### Github'daki Alıştırma ve Betiklerin "master" Sanal Sisteme İndirilmesi
 
 Önce host sistemden "master" sisteme giriyoruz:
 
