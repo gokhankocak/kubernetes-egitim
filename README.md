@@ -112,6 +112,42 @@ multipass shell master # "master" adlı sistemde bir shell açar
 
 ```shell
 git clone https://github.com/gokhankocak/kubernetes-egitim.git
+cd kubernetes-egitim
+cd betik
+chmod +x *.sh
 ```
 
 "master" adlı sisteme **"kubernetes-egitim"** adlı dizine eğitimde kullanacağımız betikler ve konfigürasyon metinleri indirilmiş oldu.
+
+### Kubernetes Dashboard Çalıştırılması
+
+Önce host sistemden "master" sisteme giriyoruz:
+
+```shell
+multipass shell master # "master" adlı sistemde bir shell açar
+```
+
+"master" sistemde aşağıdaki komutu giriyoruz:
+
+```shell
+cd kubernetes-egitim
+cd betik
+./OnPanel.sh
+```
+Bu aşamada bir token üretildi ve ekrana yazıldı. Bu token aşağıdaki adımda kullanılacak.
+
+Ayrı bir komut satırı açıp "host" sistemde "master" sistemin IP adresini not ediyoruz.
+Bunun için multipass komutunu kullanıyoruz.
+
+```shell
+multipass list
+```
+
+Listede "master" sistemin IP adresini göreceksiniz, bunu bir sonraki adımda kullanacağız.
+
+Firefox tarayıcı açıyoruz. Çünkü Chrome güvenlikle ilgili uyarılar veriyor.
+
+Tarayıcıda "https://MASTER_IP_ADRESI:10443/#/overview?namespace=default" adresini yazıyoruz.
+
+Firefox'un güvenlik uyarılarını kabul ettikten sonra Kubernetes Dashboard login ekranına geliyoruz.
+"Token" seçeneğini tıkladıktan sonra "master" sistem üzerinde bize verilen token'ı buraya kopyalıyoruz.
