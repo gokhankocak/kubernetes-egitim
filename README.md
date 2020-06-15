@@ -40,6 +40,8 @@ cd betik
 ./Kube.sh
 ```
 
+#### "node1" Sistemini Cluster'a Ekleme
+
 YeniNode.sh adlı betik ise Kubernetes Cluster'a yeni bir node eklemeye yardımcı olacak.
 
 ```shell
@@ -62,6 +64,8 @@ multipass exec node1 sudo microk8s join 192.168.64.11:25000/9c2fae7982089703e4c8
 
 "node1" sisteminin Kubernetes cluster'a katılmasını bekliyoruz.
 
+#### "node2" Sistemini Cluster'a Ekleme
+
 "node2" sistemini Kubernetes Cluster'a katmak için yine YeniNode.sh adlı betiği çalıştırıyoruz.
 ```shell
 ./YeniNode.sh
@@ -82,6 +86,19 @@ multipass exec node2 sudo microk8s join 192.168.64.11:25000/479c49727026664c1b3b
 "node2" sisteminin Kubernetes cluster'a katılmasını bekliyoruz.
 
 Bu aşamada Kubernetes Cluster kurulumunu tamamlamış olduk.
+
+#### Kubernetes Cluster'ın Durumunu Görme
+
+```shell
+multipass exec master sudo microk8s kubectl get nodes
+```
+
+| NAME         |   STATUS   |  ROLES |   AGE   | VERSION                   |
+|--------------|------------|--------|---------|---------------------------|
+|192.168.64.10 |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
+|192.168.64.9  |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
+|master        |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
+
 
 ### Github'daki Alıştırma ve Betiklerin "master" Sanal Sisteme İndirilmesi
 
