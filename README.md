@@ -104,7 +104,7 @@ multipass exec master sudo microk8s kubectl get nodes
 Önce host sistemden "master" sisteme giriyoruz:
 
 ```shell
-multipass exec master # "master" adlı sistemde bir shell açar
+multipass shell master # "master" adlı sistemde bir shell açar
 ```
 
 "master" sistemde aşağıdaki komutu giriyoruz:
