@@ -4,12 +4,15 @@
 # Copyright (c) 2020 Gökhan Koçak
 # www.gokhankocak.com
 
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo snap install microk8s --classic
-sudo microk8s status --wait-ready
-sudo microk8s enable dashboard dns registry
-sudo microk8s kubectl get all --all-namespaces
-sudo usermod -a -G microk8s ubuntu
-sudo chown -f -R ubuntu ~/.kube
-sudo microk8s status
+multipass launch -m 2G -d 16G -n master
+multipass transfer Micro.sh master:/tmp
+multipass exec master /bin/bash /tmp/Micro.sh
+
+multipass launch -m 2G -d 16G -n node1
+multipass transfer Micro.sh node1:/tmp
+multipass exec node1 /bin/bash /tmp/Micro.sh
+
+multipass launch -m 2G -d 16G -n node2
+multipass transfer Micro.sh node2:/tmp
+multipass exec node2 /bin/bash /tmp/Micro.sh
+
