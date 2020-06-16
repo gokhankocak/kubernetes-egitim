@@ -131,3 +131,10 @@ Tarayıcıda "https://MASTER_IP_ADRESI:10443/#/overview?namespace=default" adres
 
 Firefox'un güvenlik uyarılarını kabul ettikten sonra Kubernetes Dashboard login ekranına geliyoruz.
 "Token" seçeneğini tıkladıktan sonra "master" sistem üzerinde bize verilen token'ı buraya kopyalıyoruz.
+
+## Eğitim Videoları
+
+| Eğitim Konusu ve YouTube Bağlantısı                 |   Açıklama              |
+|-----------------------------------------------------|-------------------------|
+| [Kurulum](https://youtu.be/IuOmqBkS4rc)             | Kubernetes Kurulumu     | 
+| [Dashboard](https://youtu.be/JjGXCR-v8i0)           | Kubernetes Dashboard    |
