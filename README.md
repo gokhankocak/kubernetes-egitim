@@ -37,7 +37,8 @@ Bu sistemlere gerekli yazılımları yükleyecek.
 
 ```shell
 cd betik
-./Kube.sh
+./Kube.sh # Linux için
+Kube.CMD # Windows için
 ```
 
 #### "node1" Sistemini Cluster'a Ekleme
@@ -45,7 +46,8 @@ cd betik
 YeniNode.sh adlı betik ise Kubernetes Cluster'a yeni bir node eklemeye yardımcı olacak.
 
 ```shell
-./YeniNode.sh
+./YeniNode.sh # Linux için
+YeniNode.CMD # Windows için
 ```
 
 Aşağıdakine benzer bir çıktı göreceksiniz. IP adresleri ve token sizde farklı olacak.
@@ -68,7 +70,8 @@ multipass exec node1 sudo microk8s join 192.168.64.11:25000/9c2fae7982089703e4c8
 
 "node2" sistemini Kubernetes Cluster'a katmak için yine YeniNode.sh adlı betiği çalıştırıyoruz.
 ```shell
-./YeniNode.sh
+./YeniNode.sh # Linux için
+YeniNode.CMD # Windows için
 ```
 
 Aşağıdakine benzer bir çıktı göreceksiniz. IP adresleri ve token sizde farklı olacak.
@@ -95,9 +98,9 @@ multipass exec master sudo microk8s kubectl get nodes
 
 | NAME         |   STATUS   |  ROLES |   AGE   | VERSION                   |
 |--------------|------------|--------|---------|---------------------------|
-|192.168.64.10 |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
-|192.168.64.9  |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
-|master        |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
+| 192.168.64.10 |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
+| 192.168.64.9  |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
+| master        |  Ready     | <none> |   102s  | v1.18.3-34+0c5dcc01175871 |
 
 ### Kubernetes Dashboard Çalıştırılması
 
@@ -138,3 +141,4 @@ Firefox'un güvenlik uyarılarını kabul ettikten sonra Kubernetes Dashboard lo
 |-----------------------------------------------------|-------------------------|
 | [Kurulum](https://youtu.be/IuOmqBkS4rc)             | Kubernetes Kurulumu     | 
 | [Dashboard](https://youtu.be/JjGXCR-v8i0)           | Kubernetes Dashboard    |
+| [Pod](https://youtu.be/XVnfVXnWJbQ)                 | Kubernetes Pod          |
