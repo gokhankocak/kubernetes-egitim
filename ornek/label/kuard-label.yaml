@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuard
+  labels:
+    app: kuard
+    ver: v1
+    ortam: prod
+    bolum: Finans
+  annotations:
+    sorumlu: "Ahmet T."
+    tel: "5xx 111 11 11"
+    destek: "ABC Yazilim 0 212 111 11 11 destek@abcyazilim.com"
+spec:
+  selector:
+    matchLabels:
+      run: kuard
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: kuard
+    spec:
+      containers:
+      - name: kuard
+        image: gcr.io/kuar-demo/kuard-amd64:blue

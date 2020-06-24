@@ -1,0 +1,19 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: redis-commander
+  namespace: default
+  labels:
+    app: redis-commander
+    tier: frontend
+spec:
+  containers:
+  - name: redis-commander
+    image: rediscommander/redis-commander
+    env:
+    - name: REDIS_HOSTS
+      value: local:redis:6379
+    ports:
+    - containerPort: 8081
+      name: redis-commander
+      protocol: TCP
