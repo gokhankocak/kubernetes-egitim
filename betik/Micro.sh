@@ -13,3 +13,4 @@ sudo microk8s kubectl get all --all-namespaces
 sudo usermod -a -G microk8s ubuntu
 sudo chown -f -R ubuntu ~/.kube
 sudo microk8s status
+echo "alias kubectl='microk8s kubectl'" >>~/.bash_aliases

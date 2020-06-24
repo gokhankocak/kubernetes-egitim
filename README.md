@@ -137,8 +137,9 @@ Firefox'un güvenlik uyarılarını kabul ettikten sonra Kubernetes Dashboard lo
 
 ## Eğitim Videoları
 
-| Eğitim Konusu ve YouTube Bağlantısı                 |   Açıklama              |
-|-----------------------------------------------------|-------------------------|
-| [Kurulum](https://youtu.be/IuOmqBkS4rc)             | Kubernetes Kurulumu     | 
-| [Dashboard](https://youtu.be/JjGXCR-v8i0)           | Kubernetes Dashboard    |
-| [Pod](https://youtu.be/XVnfVXnWJbQ)                 | Kubernetes Pod          |
+| Eğitim Konusu ve YouTube Bağlantısı                 |   Açıklama                              |
+|-----------------------------------------------------|-----------------------------------------|
+| [Kurulum](https://youtu.be/IuOmqBkS4rc)             | Kubernetes Kurulumu                     | 
+| [Dashboard](https://youtu.be/JjGXCR-v8i0)           | Kubernetes Dashboard                    |
+| [Pod](https://youtu.be/XVnfVXnWJbQ)                 | Kubernetes Pod                          |
+| [Label](https://youtu.be/rcY8jlZSr48)               | Label & Annotation (Etiket ve Açıklama) |
